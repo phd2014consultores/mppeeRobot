@@ -21,10 +21,10 @@ public class readFileProperties {
     static Properties estatus = new Properties();
     
     public readFileProperties() throws FileNotFoundException, IOException {      
-//        estatus.load(new FileReader("/home/phd2014/estatusRobot.properties"));
-//        p.load(new FileReader("/home/phd2014/conexionRobot.properties"));
-        estatus.load(new FileReader("/home/mppee/tomcat/conf/estatusRobot.properties"));
-        p.load(new FileReader("/home/mppee/tomcat/conf/conexionRobot.properties"));
+        estatus.load(new FileReader("/home/phd2014/estatusRobot.properties"));
+        p.load(new FileReader("/home/phd2014/conexionRobot.properties"));
+//        estatus.load(new FileReader("/home/mppee/tomcat/conf/estatusRobot.properties"));
+//        p.load(new FileReader("/home/mppee/tomcat/conf/conexionRobot.properties"));
         
     }
 
