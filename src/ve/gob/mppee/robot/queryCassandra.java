@@ -35,7 +35,7 @@ public class queryCassandra {
             
             Session session = cluster.connect(keyspace);
 
-            rs = session.execute("SELECT id, text, origen, name FROM tweets WHERE procesado = false LIMIT 10 ALLOW FILTERING;");
+            rs = session.execute("SELECT id, text, origen, name FROM tweets WHERE procesado = false LIMIT 5 ALLOW FILTERING;");
             
         } finally {
             if (cluster != null) {

@@ -19,12 +19,12 @@ public class MppeeRobot {
      * @throws java.io.IOException
      */
     
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, Exception {
         // TODO code application logic here
         mppeeRobot();
     }
     
-    public static void mppeeRobot() throws IOException{
+    public static void mppeeRobot() throws IOException, Exception{
         readFileProperties properties = new readFileProperties();
         List <Row> actual = null;
         if(properties.getStatus()){
@@ -33,6 +33,7 @@ public class MppeeRobot {
                                                   properties.getUser(), 
                                                   properties.getPass())).all();
             //clasificar.clasificar(actual);
+            TweetTSVToSeq.tweetTSVtoSeq();
             queryCassandra.updateData(properties.getHost(), 
                                     properties.getKeyspace(), 
                                     properties.getUser(), 
