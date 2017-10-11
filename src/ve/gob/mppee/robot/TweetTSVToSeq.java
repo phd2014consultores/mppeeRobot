@@ -37,7 +37,7 @@ public class TweetTSVToSeq {
                 configuration.addResource(new Path("/home/phd2014/hadoop/etc/hadoop/conf/core-site.xml")); // Replace with actual path
                 configuration.addResource(new Path("/home/phd2014/hadoop/etc/hadoop/conf/hdfs-site.xml")); // Replace with actual path
 		FileSystem fs = FileSystem.get(configuration);
-		Writer writer = new SequenceFile.Writer(fs, configuration, new Path("/home/phd2014/tweets-seq"),
+		Writer writer = new SequenceFile.Writer(fs, configuration, new Path("/home/phd2014/robot/tweets-seq/"),
 				Text.class, Text.class);
 		
 		BufferedReader reader = new BufferedReader(new FileReader("/home/phd2014/dataDeEntrenamiento.tsv"));
@@ -54,10 +54,9 @@ public class TweetTSVToSeq {
 			}
 			String category = tokens[0];
 			String message = tokens[1];
-			key.set("/" + category);
+			key.set("/" + category + "/");
 			value.set(message);
 			writer.append(key, value);
-                        System.out.println("Imprimio");
 		}
 		reader.close();
 		writer.close();
