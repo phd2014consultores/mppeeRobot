@@ -32,7 +32,7 @@ public class MppeeRobot {
                                                   properties.getKeyspace(), 
                                                   properties.getUser(), 
                                                   properties.getPass())).all();
-            //clasificar.clasificar(actual);
+            clasificar.clasificar(actual);
             TweetTSVToSeq.tweetTSVtoSeq();
             queryCassandra.updateData(properties.getHost(), 
                                     properties.getKeyspace(), 
